@@ -1,57 +1,45 @@
-# Astro Starter Kit: Basics
+# Tesla Landing 🚗
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the **Tesla Landing Page** — a sleek, modern landing page built with **HTML**, **CSS**, **JavaScript**, **Astro**, and **Tailwind CSS**. This project showcases interactive effects and responsive design, drawing inspiration from Tesla's clean and minimal aesthetic.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Dynamic Menu Backdrop Blur:**  
+  Hover over the navigation menu items to see a smooth backdrop blur effect that transitions seamlessly between items, adding a modern touch to the navigation.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Adaptive Header Color:**  
+  As you scroll, watch the header title change color between white and black, smoothly adapting based on scroll position to ensure readability and a dynamic visual experience.
 
-## 🚀 Project Structure
+## 🛠️ Technologies Used
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro**: For static site generation and performance optimization.
+- **Tailwind CSS**: For responsive, utility-first styling.
+- **JavaScript**: To add smooth animations and interactive effects.
+  
+## 💡 Getting Started
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/tesla-landing.git
+2. **Install Dependencies**:
+   ```bash
+   cd tesla-landing
+   npm install
+3. **Run the Development Server**:
+   ```bash
+    4. npm run dev
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+ ## 📷 Screenshots
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+![Tesla Landing Desktop View]([link-to-screenshot](https://private-user-images.githubusercontent.com/44237766/380871270-337cf309-0e72-495b-ab97-db2e616d3ff6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAxNDUzODksIm5iZiI6MTczMDE0NTA4OSwicGF0aCI6Ii80NDIzNzc2Ni8zODA4NzEyNzAtMzM3Y2YzMDktMGU3Mi00OTViLWFiOTctZGIyZTYxNmQzZmY2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI4VDE5NTEyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk4NDU1MWFhZGNkMjYzMWYzOGMyZmI3M2M1MWM2ZWRhMmExZWUyNGY2MDYwNGQ0MWU0NzI4Yzk3MjllOThkODgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.E8yRDIARKNSEMMqk8J_xXBHVVeF5kMr7jZNFp7kmTho))  
+*A desktop view of the Tesla landing page.*
 
-Any static assets, like images, can be placed in the `public/` directory.
+![Tesla Landing Mobile View]([link-to-screenshot](https://private-user-images.githubusercontent.com/44237766/380871335-90de810e-e91c-4f16-87c0-971ab05d9d94.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAxNDU0MDQsIm5iZiI6MTczMDE0NTEwNCwicGF0aCI6Ii80NDIzNzc2Ni8zODA4NzEzMzUtOTBkZTgxMGUtZTkxYy00ZjE2LTg3YzAtOTcxYWIwNWQ5ZDk0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI4VDE5NTE0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQyMTZlMWQzZWM0NDljZGM1MGI1ZTU3ZTU2NmQzMGM0NWRlMTBhOTU5YTMzNWQzOGQ4NTljYmEwYmQwMWQwZDEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.iAerCZ3u66UN5lTHMIV7VzAlwwhyL3p9kCWTXzo5V9s))  
+*Responsive mobile view.*
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+Feel free to explore the code, suggest improvements, or fork the project to make it your own! 😊
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-# tesla-landing
-Ejemplo de landing de Tesla con HTML, CSS, Javascript, Tailwind y Astro
