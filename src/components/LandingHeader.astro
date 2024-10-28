@@ -10,26 +10,43 @@ import Logo from "./Logo.astro";
         <Logo />
     </div>
 
-    <nav>
+    <nav class="xl-nav hidden xl:flex">
         <ul
-            class="flex text-sm [&>li>a]:transition.colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-3 [&>li>a]:py-2"
+            class="xl:flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-3 [&>li>a]:py-2"
         >
-            <li><a href="#">Model S</a></li>
-            <li><a href="#">Model 3</a></li>
-            <li><a href="#">Model X</a></li>
-            <li><a href="#">Model Y </a></li>
-            <li><a href="#">Powerwall</a></li>
-            <li><a href="#">Carga</a></li>
+            <li><a href="#model-s">Model S</a></li>
+            <li><a href="#model-three">Model 3</a></li>
+            <li><a href="#model-x">Model X</a></li>
+            <li><a href="#model-y">Model Y </a></li>
+            <li><a href="#powerwall">Powerwall</a></li>
+            <li><a href="#charge">Carga</a></li>
         </ul>
     </nav>
-    <nav class="flex flex-grow justify-end basis-0">
+    <nav class="xl-nav flex flex-grow justify-end basis-0">
         <ul
-            class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-3 [&>li>a]:py-2"
+            class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:px-3 [&>li>a]:py-2"
         >
-            <li><a href="#">Soporte</a></li>
-            <li><a href="#">Tienda</a></li>
-            <li><a href="#">Cuenta</a></li>
-            <li><a href="#">Menú</a></li>
+            <li class="hidden xl:block"><a href="#">Soporte</a></li>
+            <li class="hidden xl:block"><a href="#">Tienda</a></li>
+            <li class="hidden xl:block"><a href="#">Cuenta</a></li>
+            <li><a id="menu-btn" href="#">Menú</a></li>
+        </ul>
+    </nav>
+
+    <nav id="modal-menu" class="hidden flex flex-col bg-white text-black absolute left-0 right-0 top-0 bottom-0 h-screen">
+        <button id="close-btn" class="w-screen flex justify-end p-5">
+            <img alt="close icon" src="close-icon.svg" class="h-6">
+        </button>
+        <ul
+            class="w-full px-3 mt-5 [&>li>a]:font-medium [&>li]:mt-5 [&>li>a]:flex [&>li>a]:justify-between [&>li>a]:inline-block [&>li>a]:px-6 [&>li>a]:py-3"
+        >
+            <li><a href="#home">Home<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"></a></li>
+            <li><a href="#model-s">Model S<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/></a></li>
+            <li><a href="#model-three">Model 3<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/></a></li>
+            <li><a href="#model-x">Model X<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/></a></li>
+            <li><a href="#model-y">Model Y<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/> </a></li>
+            <li><a href="#powerwall">Powerwall<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/></a></li>
+            <li><a href="#charge">Carga<img class="h-5" alt="arrow-icon" src="arrow-icon.svg"/></a></li>
         </ul>
     </nav>
 
@@ -42,6 +59,7 @@ import Logo from "./Logo.astro";
             w-[var(--width)] h-[var(--height)]
             transition-all duration-500
             ease-in-out
+            invisible
             opacity-0 -z-10
         `}
     >
@@ -49,27 +67,48 @@ import Logo from "./Logo.astro";
 </header>
 
 <script>
-    const listItem = document.querySelectorAll("#landing-header li");
-    const menuBackDrop = document.querySelector(
+    const $modalMenuList = document.querySelectorAll("#modal-menu li");
+    const $closeBtn = document.querySelector("#close-btn");
+    const $menuBtn = document.querySelector("#menu-btn");
+    const $modalMenu = document.querySelector("#modal-menu") as HTMLElement;
+
+    $menuBtn.addEventListener("click", () => {
+        $modalMenu.classList.toggle("hidden");
+    });
+
+    $closeBtn.addEventListener("click", () => {
+        $modalMenu.classList.toggle("hidden");
+    });
+
+    $modalMenuList.forEach((item) => {
+        item.addEventListener("click", () => {
+            $modalMenu.classList.toggle("hidden");
+        })
+    })
+</script>
+
+<script>
+    const $listItem = document.querySelectorAll(".xl-nav li");
+    const $menuBackDrop = document.querySelector(
         "#menu-backdrop",
     ) as HTMLElement;
 
-    listItem.forEach((item) => {
+    $listItem.forEach((item) => {
         item.addEventListener("mouseenter", () => {
             const { left, top, width, height } = item.getBoundingClientRect();
-            
-            menuBackDrop.style.setProperty("--left", `${left}px`);
-            menuBackDrop.style.setProperty("--top", `${top}px`);
-            menuBackDrop.style.setProperty("--width", `${width}px`);
-            menuBackDrop.style.setProperty("--height", `${height}px`);
 
-            menuBackDrop.style.opacity = "1";
-            menuBackDrop.style.visibility = "visible";
+            $menuBackDrop.style.setProperty("--left", `${left}px`);
+            $menuBackDrop.style.setProperty("--top", `${top}px`);
+            $menuBackDrop.style.setProperty("--width", `${width}px`);
+            $menuBackDrop.style.setProperty("--height", `${height}px`);
+
+            $menuBackDrop.style.opacity = "1";
+            $menuBackDrop.style.visibility = "visible";
         });
 
         item.addEventListener("mouseleave", () => {
-            menuBackDrop.style.opacity = "0";
-            menuBackDrop.style.visibility = "hidden";
+            $menuBackDrop.style.opacity = "0";
+            $menuBackDrop.style.visibility = "hidden";
         });
     });
 </script>
